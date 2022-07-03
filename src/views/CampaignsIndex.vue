@@ -40,7 +40,7 @@ export default {
 </script>
 
 <template>
-  <div class="home">
+  <div class="campaign-index">
     <h1>New Campaign</h1>
     <div>
       Name:
