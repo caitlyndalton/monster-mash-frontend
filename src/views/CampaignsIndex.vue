@@ -6,6 +6,7 @@ export default {
     return {
       campaigns: [],
       newCampaignParams: {},
+      editCampaignParams: {},
       currentCampaign: {},
     };
   },
@@ -33,7 +34,26 @@ export default {
     },
     showCampaign: function (campaign) {
       this.currentCampaign = campaign;
+      this.editCampaignParams = campaign;
       document.querySelector("#campaign-details").showModal();
+    },
+    updateCampaign: function (campaign) {
+      axios
+        .patch("/campaigns/" + campaign.id, this.editCampaignParams)
+        .then((response) => {
+          console.log("campaigns update", response);
+          this.currentCampaign = {};
+        })
+        .catch((error) => {
+          console.log("campaign update error", error.response);
+        });
+    },
+    destroyCampaign: function (campaign) {
+      axios.delete("/campaigns/" + campaign.id).then((response) => {
+        console.log("campaigns destroy", response);
+        var index = this.campaigns.indexOf(campaign);
+        this.campaigns.splice(index, 1);
+      });
     },
   },
 };
@@ -52,14 +72,22 @@ export default {
     <h1>All Campaigns</h1>
     <div v-for="campaign in campaigns" v-bind:key="campaign.id">
       <h2>{{ campaign.name }}</h2>
-      <p>Description: {{ campaign.description }}</p>
+      <p>{{ campaign.description }}</p>
       <button v-on:click="showCampaign(campaign)">More info</button>
     </div>
     <dialog id="campaign-details">
       <form method="dialog">
-        <h1>Campaign Info</h1>
-        <p>Name: {{ currentCampaign.name }}</p>
-        <p>Description: {{ currentCampaign.description }}</p>
+        <h1>Campaign info</h1>
+        <p>
+          Name:
+          <input type="text" v-model="editCampaignParams.name" />
+        </p>
+        <p>
+          Description:
+          <input type="text" v-model="editCampaignParams.description" />
+        </p>
+        <button v-on:click="updateCampaign(currentCampaign)">Update</button>
+        <button v-on:click="destroyCampaign(currentCampaign)">Destroy Campaign</button>
         <button>Close</button>
       </form>
     </dialog>
