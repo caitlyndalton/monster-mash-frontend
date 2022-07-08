@@ -9,6 +9,10 @@
     <router-link to="/login">Login</router-link>
     |
     <router-link to="/creatures">Creatures</router-link>
+    |
+    <router-link to="/items">Items</router-link>
+    |
+    <router-link to="/npcs">Npcs</router-link>
   </div>
   <router-view />
 </template>
