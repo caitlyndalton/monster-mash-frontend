@@ -3,6 +3,7 @@ import HomeView from "../views/HomeView.vue";
 import CampaignsIndex from "../views/CampaignsIndex.vue";
 import SignupView from "../views/SignupView.vue";
 import LoginView from "../views/LoginView.vue";
+import CreatureView from "../views/CreatureView";
 
 const routes = [
   {
@@ -32,6 +33,11 @@ const routes = [
     path: "/login",
     name: "login",
     component: LoginView,
+  },
+  {
+    path: "/creatures",
+    name: "creature-view",
+    component: CreatureView,
   },
 ];
 
