@@ -73,8 +73,15 @@ export default {
     <div v-for="campaign in campaigns" v-bind:key="campaign.id">
       <h2>{{ campaign.name }}</h2>
       <p>{{ campaign.description }}</p>
-      <div v-for="creature in campaign.creatures" v-bind:key="creature.id">{{ creature }}</div>
+      <h3>Monsters:</h3>
+      <div v-for="creature in campaign.creatures" v-bind:key="creature.id">{{ creature.name }}</div>
+      <h3>Items:</h3>
+      <div v-for="item in campaign.items" v-bind:key="item.id">{{ item.name }}</div>
+      <h3>Npcs:</h3>
+      <div v-for="npc in campaign.npcs" v-bind:key="npc.id">{{ npc.name }}</div>
+      <p></p>
       <button v-on:click="showCampaign(campaign)">More info</button>
+      <p></p>
     </div>
     <dialog id="campaign-details">
       <form method="dialog">
