@@ -15,14 +15,14 @@ export default {
   },
   methods: {
     indexCampaigns: function () {
-      axios.get("/campaigns").then((response) => {
+      axios.get("/campaigns.json").then((response) => {
         console.log("campaigns index", response);
         this.campaigns = response.data;
       });
     },
     createCampaign: function () {
       axios
-        .post("/campaigns", this.newCampaignParams)
+        .post("/campaigns.json", this.newCampaignParams)
         .then((response) => {
           console.log("campaigns create", response);
           this.campaigns.push(response.data);
@@ -73,6 +73,7 @@ export default {
     <div v-for="campaign in campaigns" v-bind:key="campaign.id">
       <h2>{{ campaign.name }}</h2>
       <p>{{ campaign.description }}</p>
+      <div v-for="creature in campaign.creatures" v-bind:key="creature.id">{{ creature }}</div>
       <button v-on:click="showCampaign(campaign)">More info</button>
     </div>
     <dialog id="campaign-details">
