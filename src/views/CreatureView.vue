@@ -5,22 +5,23 @@ export default {
     return {
       creatures: [],
       newCreatureParams: {},
+      currentCreature: {},
     };
   },
   created: function () {
-    this.indexCreatures();
-    // axios.get("https://www.dnd5eapi.co/api/monsters/goblin").then((response) => {
-    //   console.log(response.data);
-    //   this.creatures = response.data;
-    // });
+    // this.indexCreatures();
+    axios.get("https://www.dnd5eapi.co/api/monsters").then((response) => {
+      console.log(response.data);
+      this.creatures = response.data.results;
+    });
   },
   methods: {
-    indexCreatures: function () {
-      axios.get("/creatures").then((response) => {
-        console.log("creatures index", response);
-        this.creatures = response.data;
-      });
-    },
+    // indexCreatures: function () {
+    //   axios.get("/creatures").then((response) => {
+    //     console.log("creatures index", response);
+    //     this.creatures = response.data;
+    //   });
+    // },
     createCreature: function () {
       axios
         .post("/creatures", this.newCreatureParams)
@@ -32,6 +33,19 @@ export default {
         .catch((error) => {
           console.log("creatures create error", error.response);
         });
+    },
+    getCreatureInfo: function (creature) {
+      console.log(creature);
+      axios.get("https://www.dnd5eapi.co" + creature.url).then((response) => {
+        console.log(response.data);
+        this.currentCreature = response.data;
+        this.newCreatureParams = {
+          name: response.data.name,
+          api_type: response.data.type,
+          api_index: response.data.index,
+        };
+        document.querySelector("#creature-details").showModal();
+      });
     },
   },
 };
@@ -54,7 +68,18 @@ export default {
     <h1>All Creatures</h1>
     <div v-for="creature in creatures" v-bind:key="creature.id">
       <h2>{{ creature.name }}</h2>
-      <p>{{ creature.api_type }}</p>
+      <button v-on:click="getCreatureInfo(creature)">More Info</button>
     </div>
+    <dialog id="creature-details">
+      <form method="dialog">
+        <h1>Monster info</h1>
+        <p>Info:</p>
+        <p>Name: {{ currentCreature.name }}</p>
+        <p>Type: {{ currentCreature.type }}</p>
+        <p>Size: {{ currentCreature.size }}</p>
+        <p>Armor Class: {{ currentCreature.armor_class }}</p>
+        <button>Close</button>
+      </form>
+    </dialog>
   </div>
 </template>
