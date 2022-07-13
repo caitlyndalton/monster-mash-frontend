@@ -53,7 +53,7 @@ export default {
 
 <template>
   <div class="creatures-index">
-    <h1>New Creature</h1>
+    <h1>Add to Campaign</h1>
     <div>
       Index:
       <input class="form-control" type="text" v-model="newCreatureParams.api_index" />
@@ -63,9 +63,9 @@ export default {
       <input class="form-control" type="text" v-model="newCreatureParams.name" />
       Campaign:
       <input class="form-control" type="text" v-model="newCreatureParams.campaign_id" />
-      <button class="btn btn-primary mt-2" v-on:click="createCreature()">Create Creature</button>
+      <button class="btn btn-primary mt-2" v-on:click="createCreature()">Add Monster to Campaign</button>
     </div>
-    <h1>All Creatures</h1>
+    <h1>All Creatures & Monsters</h1>
     <div class="row">
       <div class="col-6 mb-4" v-for="creature in creatures" v-bind:key="creature.id">
         <h2>{{ creature.name }}</h2>

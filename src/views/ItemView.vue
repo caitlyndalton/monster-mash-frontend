@@ -62,7 +62,7 @@ export default {
       <input class="form-control" type="text" v-model="newItemParams.name" />
       Campaign:
       <input class="form-control" type="text" v-model="newItemParams.campaign_id" />
-      <button class="btn btn-primary mt-2" v-on:click="createItem()">Create Item</button>
+      <button class="btn btn-primary mt-2" v-on:click="createItem()">Add to Campaign</button>
     </div>
     <h1>All Items</h1>
     <div class="row">
