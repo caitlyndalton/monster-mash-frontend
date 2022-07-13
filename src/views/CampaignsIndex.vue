@@ -93,7 +93,6 @@ export default {
     <dialog id="monster-info">
       <form method="dialog">
         <h1>Monster info</h1>
-        <p>Info:</p>
         <p>Name: {{ monsterInfo.name }}</p>
         <p>Type: {{ monsterInfo.type }}</p>
         <p>Size: {{ monsterInfo.size }}</p>
