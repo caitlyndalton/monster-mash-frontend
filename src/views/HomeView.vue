@@ -17,8 +17,8 @@ export default {
           <div class="m-4 m-lg-5">
             <h1 class="display-5 fw-bold">Welcome to Monster Mash</h1>
             <p class="fs-4">
-              Bootstrap utility classes are used to create this jumbotron since the old component has been removed from
-              the framework. Why create custom CSS when you can use utilities?
+              The ultimate Dungeon Master's tool for creating and adding various campaign assets! Gone are the days of
+              flipping through a hundred pages or rifling through google to find a goblin stat.
             </p>
             <a class="btn btn-primary btn-lg" href="/campaigns">Start a Campaign</a>
           </div>

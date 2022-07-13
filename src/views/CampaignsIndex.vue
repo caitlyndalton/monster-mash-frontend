@@ -8,6 +8,7 @@ export default {
       newCampaignParams: {},
       editCampaignParams: {},
       currentCampaign: {},
+      monsterInfo: {},
     };
   },
   created: function () {
@@ -55,34 +56,51 @@ export default {
         this.campaigns.splice(index, 1);
       });
     },
+    getCreatureInfo: function (creature) {
+      console.log(creature);
+      axios.get("https://www.dnd5eapi.co/api/monsters/" + creature.api_index).then((response) => {
+        console.log(response.data);
+        this.monsterInfo = response.data;
+        document.querySelector("#monster-info").showModal();
+      });
+    },
   },
 };
 </script>
 
 <template>
-  <div class="campaign-index">
-    <h1>New Campaign</h1>
-    <div>
-      Name:
-      <input type="text" v-model="newCampaignParams.name" />
-      Description:
-      <input type="text" v-model="newCampaignParams.description" />
-      <button v-on:click="createCampaign()">Create Campaign</button>
+  <h1>All Campaigns</h1>
+  <div class="row">
+    <div v-for="campaign in campaigns" v-bind:key="campaign.id" class="col-4 campaign">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Name: {{ campaign.name }}</h5>
+          <p class="card-text">Description: {{ campaign.description }}</p>
+          <h3>Monsters:</h3>
+          <div v-for="creature in campaign.creatures" v-bind:key="creature.id">
+            <button class="btn btn-link" v-on:click="getCreatureInfo(creature)">{{ creature.name }}</button>
+          </div>
+          <h3>Items:</h3>
+          <div v-for="item in campaign.items" v-bind:key="item.id">{{ item.name }}</div>
+          <h3>Npcs:</h3>
+          <div v-for="npc in campaign.npcs" v-bind:key="npc.id">{{ npc.name }}</div>
+          <p></p>
+          <button v-on:click="showCampaign(campaign)">More info</button>
+          <p></p>
+        </div>
+      </div>
     </div>
-    <h1>All Campaigns</h1>
-    <div v-for="campaign in campaigns" v-bind:key="campaign.id">
-      <h2>{{ campaign.name }}</h2>
-      <p>{{ campaign.description }}</p>
-      <h3>Monsters:</h3>
-      <div v-for="creature in campaign.creatures" v-bind:key="creature.id">{{ creature.name }}</div>
-      <h3>Items:</h3>
-      <div v-for="item in campaign.items" v-bind:key="item.id">{{ item.name }}</div>
-      <h3>Npcs:</h3>
-      <div v-for="npc in campaign.npcs" v-bind:key="npc.id">{{ npc.name }}</div>
-      <p></p>
-      <button v-on:click="showCampaign(campaign)">More info</button>
-      <p></p>
-    </div>
+    <dialog id="monster-info">
+      <form method="dialog">
+        <h1>Monster info</h1>
+        <p>Info:</p>
+        <p>Name: {{ monsterInfo.name }}</p>
+        <p>Type: {{ monsterInfo.type }}</p>
+        <p>Size: {{ monsterInfo.size }}</p>
+        <p>Armor Class: {{ monsterInfo.armor_class }}</p>
+        <button>Close</button>
+      </form>
+    </dialog>
     <dialog id="campaign-details">
       <form method="dialog">
         <h1>Campaign info</h1>
@@ -102,4 +120,8 @@ export default {
   </div>
 </template>
 
-<style></style>
+<style>
+.campaign .card {
+  min-height: 700px;
+}
+</style>

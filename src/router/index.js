@@ -7,6 +7,7 @@ import CreatureView from "../views/CreatureView";
 import ItemView from "../views/ItemView";
 import NpcView from "../views/NpcView";
 import LogoutView from "../views/LogoutView";
+import CampaignCreate from "../views/CampaignCreate";
 
 const routes = [
   {
@@ -56,6 +57,11 @@ const routes = [
     path: "/logout",
     name: "logout-view",
     component: LogoutView,
+  },
+  {
+    path: "/campaign-create",
+    name: "campaign-create",
+    component: CampaignCreate,
   },
 ];
 

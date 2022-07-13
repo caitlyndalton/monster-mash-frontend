@@ -55,20 +55,22 @@ export default {
   <div class="creatures-index">
     <h1>New Creature</h1>
     <div>
-      Api:
-      <input type="text" v-model="newCreatureParams.api_index" />
+      Index:
+      <input class="form-control" type="text" v-model="newCreatureParams.api_index" />
       Type:
-      <input type="text" v-model="newCreatureParams.api_type" />
+      <input class="form-control" type="text" v-model="newCreatureParams.api_type" />
       Name:
-      <input type="text" v-model="newCreatureParams.name" />
+      <input class="form-control" type="text" v-model="newCreatureParams.name" />
       Campaign:
-      <input type="text" v-model="newCreatureParams.campaign_id" />
-      <button v-on:click="createCreature()">Create Creature</button>
+      <input class="form-control" type="text" v-model="newCreatureParams.campaign_id" />
+      <button class="btn btn-primary mt-2" v-on:click="createCreature()">Create Creature</button>
     </div>
     <h1>All Creatures</h1>
-    <div v-for="creature in creatures" v-bind:key="creature.id">
-      <h2>{{ creature.name }}</h2>
-      <button v-on:click="getCreatureInfo(creature)">More Info</button>
+    <div class="row">
+      <div class="col-6 mb-4" v-for="creature in creatures" v-bind:key="creature.id">
+        <h2>{{ creature.name }}</h2>
+        <button class="btn btn-primary" v-on:click="getCreatureInfo(creature)">More Info</button>
+      </div>
     </div>
     <dialog id="creature-details">
       <form method="dialog">

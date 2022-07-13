@@ -30,10 +30,17 @@
       </div>
     </nav>
   </div>
-  <router-view />
+  <div class="container">
+    <router-view />
+  </div>
   <footer class="py-5 bg-dark">
     <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
   </footer>
 </template>
 
-<style></style>
+<style>
+#app {
+  font-family: Futura, Arial, sans-serif;
+  background-image: url("./assets/floor-tile.png");
+}
+</style>
