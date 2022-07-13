@@ -39,7 +39,7 @@ export default {
     },
     updateCampaign: function (campaign) {
       axios
-        .patch("/campaigns/" + campaign.id, this.editCampaignParams)
+        .patch("/campaigns/" + campaign.id + ".json", this.editCampaignParams)
         .then((response) => {
           console.log("campaigns update", response);
           this.currentCampaign = {};
