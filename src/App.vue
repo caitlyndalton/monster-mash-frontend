@@ -24,6 +24,7 @@
             <li class="nav-item"><a class="nav-link" href="/npcs">Npcs</a></li>
             <li class="nav-item"><a class="nav-link" href="/signup">Signup</a></li>
             <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+            <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
           </ul>
         </div>
       </div>

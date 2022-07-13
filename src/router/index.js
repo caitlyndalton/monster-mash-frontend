@@ -6,6 +6,7 @@ import LoginView from "../views/LoginView.vue";
 import CreatureView from "../views/CreatureView";
 import ItemView from "../views/ItemView";
 import NpcView from "../views/NpcView";
+import LogoutView from "../views/LogoutView";
 
 const routes = [
   {
@@ -50,6 +51,11 @@ const routes = [
     path: "/npcs",
     name: "npc-view",
     component: NpcView,
+  },
+  {
+    path: "/logout",
+    name: "logout-view",
+    component: LogoutView,
   },
 ];
 

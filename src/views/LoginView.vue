@@ -30,47 +30,36 @@ export default {
 
 <template>
   <div class="login">
-    <form v-on:submit.prevent="submit()">
-      <h1>Login</h1>
-      <ul>
-        <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-      </ul>
-      <div>
-        <label>Email:</label>
-        <input type="email" v-model="newSessionParams.email" />
-      </div>
-      <div>
-        <label>Password:</label>
-        <input type="password" v-model="newSessionParams.password" />
-      </div>
-      <input type="submit" value="Submit" />
-    </form>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-        <div class="card border-0 shadow rounded-3 my-5">
-          <div class="card-body p-4 p-sm-5">
-            <h5 class="card-title text-center mb-5 fw-light fs-5">Sign In</h5>
-            <form>
-              <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
-                <label for="floatingInput">Email address</label>
-              </div>
-              <div class="form-floating mb-3">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" />
-                <label for="floatingPassword">Password</label>
-              </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+          <div class="card border-0 shadow rounded-3 my-5">
+            <div class="card-body p-4 p-sm-5">
+              <h5 class="card-title text-center mb-5 fw-light fs-5">Sign In</h5>
+              <form v-on:submit.prevent="submit()">
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="floatingInput" v-model="newSessionParams.email" />
+                  <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="floatingPassword"
+                    v-model="newSessionParams.password"
+                  />
+                  <label for="floatingPassword">Password</label>
+                </div>
 
-              <div class="form-check mb-3">
-                <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck" />
-                <label class="form-check-label" for="rememberPasswordCheck">Remember password</label>
-              </div>
-              <div class="d-grid">
-                <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Sign in</button>
-              </div>
-              <hr class="my-4" />
-            </form>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck" />
+                  <label class="form-check-label" for="rememberPasswordCheck">Remember password</label>
+                </div>
+                <div class="d-grid">
+                  <input type="submit" value="Submit" />
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
