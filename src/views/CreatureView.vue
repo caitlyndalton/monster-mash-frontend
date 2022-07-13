@@ -67,7 +67,7 @@ export default {
     </div>
     <h1>All Creatures & Monsters</h1>
     <div class="row">
-      <div class="col-6 mb-4" v-for="creature in creatures" v-bind:key="creature.id">
+      <div class="col-3 mb-4" v-for="creature in creatures" v-bind:key="creature.id">
         <h2>{{ creature.name }}</h2>
         <button class="btn btn-primary" v-on:click="getCreatureInfo(creature)">More Info</button>
       </div>
