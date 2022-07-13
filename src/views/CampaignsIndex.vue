@@ -87,6 +87,16 @@ export default {
 </script>
 
 <template>
+  <div class="campaign-create">
+    <h1>New Campaign</h1>
+    <div>
+      Name:
+      <input type="text" v-model="newCampaignParams.name" />
+      Description:
+      <input type="text" v-model="newCampaignParams.description" />
+      <button v-on:click="createCampaign()">Create Campaign</button>
+    </div>
+  </div>
   <h1>All Campaigns</h1>
   <div class="row">
     <div v-for="campaign in campaigns" v-bind:key="campaign.id" class="col-4 campaign">

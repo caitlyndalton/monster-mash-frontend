@@ -19,7 +19,7 @@ export default {
     },
     createNpc: function () {
       axios
-        .post("/npc", this.newNpcParams)
+        .post("/npcs", this.newNpcParams)
         .then((response) => {
           console.log("npc create", response);
           this.npc.push(response.data);

@@ -20,7 +20,7 @@ export default {
               The ultimate Dungeon Master's tool for creating and adding various campaign assets! Gone are the days of
               flipping through a hundred pages or rifling through google to find a goblin stat.
             </p>
-            <a class="btn btn-primary btn-lg" href="/campaign-create">Start a Campaign</a>
+            <a class="btn btn-primary btn-lg" href="/campaigns">Start a Campaign</a>
           </div>
         </div>
       </div>
