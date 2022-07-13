@@ -91,10 +91,10 @@ export default {
     <h1>New Campaign</h1>
     <div>
       Name:
-      <input type="text" v-model="newCampaignParams.name" />
+      <input class="form-control" type="text" v-model="newCampaignParams.name" />
       Description:
-      <input type="text" v-model="newCampaignParams.description" />
-      <button v-on:click="createCampaign()">Create Campaign</button>
+      <input class="form-control" type="text" v-model="newCampaignParams.description" />
+      <button class="btn btn-primary mt-2" v-on:click="createCampaign()">Create Campaign</button>
     </div>
   </div>
   <h1>All Campaigns</h1>
