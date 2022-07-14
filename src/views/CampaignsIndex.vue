@@ -125,32 +125,42 @@ export default {
     <dialog id="monster-info">
       <form method="dialog">
         <h1>Monster info</h1>
-        <p>Name: {{ monsterInfo.name }}</p>
-        <p>Type: {{ monsterInfo.type }}</p>
-        <p>Size: {{ monsterInfo.size }}</p>
-        <p>Armor Class: {{ monsterInfo.armor_class }}</p>
-        <p>Ability Scores:</p>
-        {{ monsterInfo.strength }}
-        {{ monsterInfo.dexterity }}
+        <h4>Name:</h4>
+        <p>{{ monsterInfo.name }}</p>
+        <h4>Type:</h4>
+        <p>{{ monsterInfo.type }}</p>
+        <h4>Size:</h4>
+        <p>{{ monsterInfo.size }}</p>
+        <h4>Armor Class:</h4>
+        <p>{{ monsterInfo.armor_class }}</p>
+        <h4>Ability Scores:</h4>
+
+        <p>
+          STR: {{ monsterInfo.strength }} | DEX: {{ monsterInfo.dexterity }} | INT: {{ monsterInfo.intelligence }} |
+          WIS: {{ monsterInfo.wisdom }} | CHA: {{ monsterInfo.charisma }}
+        </p>
         <button>Close</button>
       </form>
     </dialog>
     <dialog id="item-info">
       <form method="dialog">
-        <h1>Item info</h1>
-        <p>Name: {{ itemInfo.name }}</p>
-        <p>Type: {{ itemInfo.equipment_category }}</p>
-        <p>Description: {{ itemInfo.desc }}</p>
+        <h1>{{ itemInfo.name }}</h1>
+        <h4>Equipment Category:</h4>
+        <p>{{ itemInfo.equipment_category }}</p>
+        <h4>Description:</h4>
+        <p>{{ itemInfo.desc }}</p>
         <button>Close</button>
       </form>
     </dialog>
     <dialog id="npc-info">
       <form method="dialog">
-        <h1>Npc info</h1>
-        <p>Name: {{ npcInfo.name }}</p>
-        <p>Race: {{ npcInfo.race }}</p>
-        <p>Class: {{ npcInfo.api_class }}</p>
-        <p>Alignment: {{ npcInfo.alignment }}</p>
+        <h1>{{ npcInfo.name }}</h1>
+        <h5>Race:</h5>
+        <p>{{ npcInfo.race }}</p>
+        <h5>Class:</h5>
+        <p>{{ npcInfo.api_class }}</p>
+        <h5>Alignment:</h5>
+        <p>{{ npcInfo.alignment }}</p>
         <button>Close</button>
       </form>
     </dialog>
