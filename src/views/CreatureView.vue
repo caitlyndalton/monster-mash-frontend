@@ -80,6 +80,7 @@ export default {
         <p>Type: {{ currentCreature.type }}</p>
         <p>Size: {{ currentCreature.size }}</p>
         <p>Armor Class: {{ currentCreature.armor_class }}</p>
+        <p>Ability Scores: {{ currentCreature.strength }}</p>
         <button>Close</button>
       </form>
     </dialog>

@@ -129,6 +129,9 @@ export default {
         <p>Type: {{ monsterInfo.type }}</p>
         <p>Size: {{ monsterInfo.size }}</p>
         <p>Armor Class: {{ monsterInfo.armor_class }}</p>
+        <p>Ability Scores:</p>
+        {{ monsterInfo.strength }}
+        {{ monsterInfo.dexterity }}
         <button>Close</button>
       </form>
     </dialog>
