@@ -6,7 +6,7 @@ import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 axios.defaults.baseURL =
-  process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://polar-badlands-73107.herokuapp.com";
+  process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://monstermash.fly.dev/";
 
 var jwt = localStorage.getItem("jwt");
 if (jwt) {
