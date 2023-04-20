@@ -15,7 +15,7 @@ export default {
       <div class="container px-lg-5">
         <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
           <div class="m-4 m-lg-5">
-            <h1 class="display-5 fw-bold">Welcome to Monster Mash</h1>
+            <h1 class="display-5 fw-bold"></h1>
             <p class="fs-5">
               Howdy UMA! This is my pride and joy (so far), Monster Mash. Made entirely by myself, front and back end,
               API integration, JWT/Secure signup/login, postgresql database. I would love to tell you more about this
