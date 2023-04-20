@@ -6,6 +6,7 @@ export default {
       creatures: [],
       newCreatureParams: {},
       currentCreature: {},
+      selected: "",
     };
   },
   created: function () {
@@ -62,7 +63,7 @@ export default {
       Name:
       <input class="form-control" type="text" v-model="newCreatureParams.name" />
       Campaign:
-      <input class="form-control" type="text" v-model="newCreatureParams.campaign_id" />
+      <input class="form-control" type="text" v-model.number="newCreatureParams.campaign_id" />
       <button class="btn btn-primary mt-2" v-on:click="createCreature()">Add Monster to Campaign</button>
     </div>
     <h1>All Creatures & Monsters</h1>

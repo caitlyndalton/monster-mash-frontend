@@ -18,6 +18,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
             <li class="nav-item"><a class="nav-link" href="/campaigns">Campaigns</a></li>
             <li class="nav-item"><a class="nav-link" href="/creatures">Monsters</a></li>
             <li class="nav-item"><a class="nav-link" href="/items">Items</a></li>
